@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8"/>
+    <title>T6 - Documento HTML sobre trabajo de investigación de programación</title>
+  </head>
+
+  <body style="font-family:Arial;font-size:small;text-align:justify"></br>
+    <div align="left"><img src="uach.png" height="100px"
+     align="right"><img src="ingenieria.png" height="100px"></div>
+    <h2 style="font-size:large;text-align:center"><ins> UNIVERSIDAD AUTONOMA DE CHIHUAHUA </ins></h2>
+    <h2 style="font-size:large;text-align:center"><ins> FACULTAD DE INGENIERIA </ins></h2>
+    <h2 style="font-size:large;text-align:center"><ins> INGENIERIA DE SOFTWARE </ins></h2>
+    <h2 style="font-size:large;text-align:center"> Tecnologias Web </h2>
+    <h2 style="font-size:large;text-align:center"> Docente; Andrei Helo Guereca </h2>
+    <h2 style="font-size:large;text-align:center"> Punteros </h2>
+    <h2 style="font-size:large;text-align:center"> 288237 Maria Cristina Garcia Lara </h2>
+    <ins><h2 style="font-size:large;text-align:center"> Fecha de entrega; <small>06/09/15</small></h2></br></ins>
+    <h3><strong><ins>Indice</ins></strong></h3>
+    <ol>
+      <li><a href="#tema1"><b>Introduccion</b></a></li>
+      <li><a href="#tema2"><b>¿Qué son los punteros?</b></a></li>
+      <li><a href="#tema3"><b>Variables puntero</b></a></li>
+      <li><a href="#tema4"><b>Los operadores de punteros & y *</b></a></li>
+      <li><a href="#tema5"><b>Asignaciones de punteros</b></a></li>
+      <li><a href="#tema6"><b>Conversión de punteros</b></a></li>
+      <li><a href="#tema7"><b>Aritmética de punteros</b></a></li>
+      <li><a href="#tema8"><b>Arrays de punteros</b></a></li>
+      <li><a href="#tema9"><b>Inicialización de punteros</b></a></li>
+      <li><a href="#tema10"><b>Ejemplos</b></a></li>
+      <li><a href="#tema11"><b>Conclusion</b></a></li>
+      <li><a href="#tema12"><b>Bibliografía</b></a></li>
+    </ol></br>
+    <h3 id="tema1" style="color:darkred">Introduccion</h3>
+    <p><i> El correcto entendimiento y uso de los punteros es crítico para una fructífera
+programación en c. varias son las razones: en primer lugar, los punteros
+proporcionan los medios por los cuales las funciones pueden modificar sus
+argumentos de llamada. En segundo lugar, los punteros son el soporte de la
+asignación dinámica. En tercer lugar, los punteros pueden mejorar la eficiencia de
+ciertas rutinas. Por último, los punteros proporcionan el soporte de las estructuras
+de datos dinámicas, tales como los arboles binarios o las listas enlazadas. </i></p>
+    <p><em> Los punteros son una de las características más poderosas de c, pero también
+una de las más peligrosas. Por ejemplo, un puntero que no contenga un valor
+valido puede provocar el fallo del sistema. Y lo que quizá es peor, es fácil utilizar
+punteros de forma incorrecta, y el uso incorrecto puede causar fallos muy difíciles
+de encontrar. </em></p>
+    <h3 id="tema2" style="color:darkred">¿Qué son los punteros?</h3>
+    <p><i> Un puntero también conocido como apuntador es una variable que contiene una
+dirección de memoria. Esa dirección es la posición de otro objeto (normalmente
+otra variable) en memoria. Por ejemplo, si una variable contiene la dirección de
+otra variable, entonces se dice que la primera variable apunta a la segunda. </i></p>
+    <h3 id="tema3" style="color:darkred">Variables puntero</h3>
+    <p><em> Si una variable va a ser un puntero, entonces tiene que declararse como tal. Una
+declaración del puntero consiste en un tipo base, un * y el nombre de la variable.
+La forma general de declaración de una variable puntero es </em></p>
+    <p><mark> Tipo * nombre; </mark></p>
+    <p><em> Donde tipo es el tipo base del puntero, que puede ser cualquier tipo valido. El
+nombre de la variable puntero se especifica con nombre. </em></p>
+    <p><i> El tipo base del puntero define el tipo de variables a las que puede apuntar el
+puntero. Técnicamente, cualquier tipo de puntero puede apuntar a cualquier lugar
+de la memoria. Sin embargo, todas las operaciones de punteros se realizan de
+acuerdo con sus tipos de base. Por ejemplo, cuando se declara un puntero como
+de tipo int *, el compilador asume que cualquier dirección que contenga apunta a
+un entero; lo haga realmente o no. (Es decir un puntero int * siempre <q>piensa</q> que
+apunta a un objeto int, independientemente de lo que realmente contenga esa
+parte de la memoria.) Por tanto, al declarar un puntero hay que asegurarse de que
+su tipo de base sea compatible con el tipo de objeto al que se quiera que apunte. </i></p>
+    <h3 id="tema4" style="color:darkred">Los operadores de punteros & y *</h3>
+    <p><em> Repasando lo dicho anteriormente, un puntero es la dirección de memoria de una
+variable. Una variable puntero es una variable específicamente declarada por
+contener un puntero a su tipo específico. Los punteros son una de las
+características más potentes de C, siendo utilizados para una gran variedad de
+propósitos. Por ejemplo, proporcionan una rápida forma de referenciar los
+elementos de un array. Permiten a las funciones modificar los parámetros de
+llamada. Dan soporte a las listas enlazadas y a otras estructuras de datos
+dinámicas. </em></p>
+    <p><i> El primer operador de punteros es &, un operador monario que devuelve la
+dirección de memoria del operando. (Recuérdese que un operador monario es
+aquel que solo requiere un operando.) Por ejemplo, </i></p>
+    <p><mark> m= &cont; </mark></p>
+    <p><em> Coloca en m la dirección de memoria de la variable cont. Esta es la dirección de la
+posición interna en la computadora de la variable. <del>No tiene</del> nada que ver con el
+valor de cont. Se puede pensar en & como significando <q>la dirección de</q>. Por tanto,
+la instrucción anterior de asignación significa <q>m recibe la dirección de cont</q>. </em></p>
+    <p><i> Para comprenderlo mejor, supongamos que la variable cont utiliza la posición de
+memoria 2000 para guardar su valor. También supongamos que el valor de cont
+es 100. Después de la asignación, m tendrá el valor 2000. </i></p>
+    <p><em> El segundo operador de punteros es *, que es el complementario de &. Es un
+operador monario que devuelve el valor de la variable ubicada en la dirección que
+se especifica. Por ejemplo, si m contiene la dirección de memoria de la variable
+cont entonces </em></p>
+    <p><mark> q = *m; </mark></p>
+    <p><i> Colocara el valor de cont en q. ahora q tendrá el valor 100 ya que 100 es lo
+guardado en la posición 2000, que es la dirección de memoria que contiene m.
+piénsese en * como significado <q>en la dirección</q>. En este caso, la instrucción de
+asignación significa <q>q recibe el valor en la dirección m</q>. </i></p>
+    <p><em> Las variables que vayan a contener punteros se han de declara como tales,
+colocando un * delante del nombre de la variable. Esto indica al compilador que va
+a contener un puntero a ese tipo de variable. Por ejemplo, para declarar c como
+puntero a carácter podemos escribir </em></p>
+    <p><mark> Char *c; <mark></p>
+    <p><i> Es importante que aquí c <del>no es un carácter</del>, si no un puntero a un carácter; hay
+una gran diferencia. El tipo de dato al que apunta un puntero, en este caso char,
+se denomina tipo base del puntero. Sin embargo, la propia variable puntero es una
+variable que mantiene la dirección de un objeto del tipo base. Así, un puntero a
+carácter (o cualquier puntero, generalizado) tiene un tamaño suficiente para
+guardar una dirección tal como este definida por la arquitectura de la computadora
+que se utilice. Es el tipo base el que determina lo que puede haber en esa
+dirección. </em></p>
+    <p><i> Se pueden mezclar variables puntero y normales en la misma instrucción de
+declaración. Por ejemplo, </i></p>
+    <p><mark> Int x, *y, cont; </mark></p>
+    <p><em> Declara x y cont como tipo entero e y como puntero a un dato entero. </em></p>
+    <h3 id="tema5" style="color:darkred">Asignaciones de punteros</h3>
+    <p><i> Un puntero puede utilizarse a la derecha de una instrucción de asignación para
+asignar su valor a otro puntero. Cuando ambos punteros son del mismo tipo, la
+situación es muy sencilla. Por ejemplo; </i></p>
+    <p><mark> Int x= 99; </mark></p>
+    <p><mark> Int *p1,*p2; </mark></p>
+    <p><mark> p1 = &x; </mark></p>
+    <p><mark> p2 = p1; </mark></p>
+    <p><em> Tanto p1 como p2 apuntan a x. por tanto, tanto p1 como p2 se refieren al mismo
+objeto. </em></p>
+    <h3 id="tema6" style="color:darkred">Conversión de punteros</h3>
+    <p><i> Se puede convertir un tipo de puntero en otro tipo de puntero. Dos son las
+categorías generales de conversiones: aquellas que involucran punteros void* y
+aquellas otras que no. </i></p>
+    <p><em> En c se puede asignar un puntero void* a cualquier otro tipo de puntero. También
+se permite asignar cualquier otro tipo de puntero a un puntero void*. Un puntero
+void* se denomina puntero genérico. Un puntero void* se utiliza para especificar
+un puntero cuyo tipo base se desconoce. El tipo void* permite a una función
+especificar un parámetro que pueda recibir cualquier tipo de argumento puntero
+sin que se produzca un error de discordancia de tipo. También se utiliza para referirse a la memoria en bruto cuando el significado de esa memoria no se
+conoce. No se requiere ningún molde explicito para convertir de 0 a un puntero
+void*. </em></p>
+    <p><i> Excepto con void*, todas las demás conversiones de punteros se deben realizar
+por medio de un molde explicito. Sin embargo, la conversión de un tipo de puntero
+en otro tipo puede dar lugar a un comportamiento impredecible. En el siguiente
+ejemplo se intenta asignar el valor de x a y, a través del puntero p. por lo que no
+produce el resultado deseado. </i></p>
+    <p><mark> Doublé x = 100.1, y; </mark></p>
+    <p><mark> int p; </mark></p>
+    <p><mark> p = (int *) &x; </mark></p>
+    <p><mark> y = *p; </mark></p>
+    <h3 id="tema7" style="color:darkred">Aritmética de punteros</h3>
+    <p><em> Existen solo dos operaciones aritméticas que se pueden usar con punteros; la
+suma y la resta. Sea p1 un puntero con valor actual de 100. Además, asumamos
+que los enteros son de dos bytes de longitud. Después de la expresión </em></p>
+    <p><mark> p1++; </mark></p>
+    <p><i> p1 contiene 102, <del>no 101</del>. La razón de esto es que cada vez que p1 se incrementa,
+apunta al siguiente entero. Lo mismo ocurre al decrementar. Por ejemplo,
+suponiendo que p1 tenga un valor 100, la expresión </i></p>
+    <p><mark> p1--; </mark></p>
+    <p><em> Hace que p1 tenga el valor 98. </em></p>
+    <p><i> Cada vez que se incrementa un puntero, apunta a la posición de memoria del
+siguiente elemento de su tipo base. Cada vas que se decrementa, apunta a la
+posición del elemento anterior. Cuando se aplica a punteros a char, esto hace que
+parezca una aritmética <q>normal</q>, ya que los caracteres siempre ocupan un byte. El
+resto de los punteros aumentan o decrecen en la longitud del tipo de datos a los
+que apuntan. Este método asegura que un puntero siempre apunta a un elemento
+adecuado del tipo base. </i></p>
+    <p><em> No se está limitado solo a los operadores de incremento y decremento. Por
+ejempló, se pueden sumar o restar enteros a y de punteros </em></p>
+    <p><mark> p1 = p1 +12; </mark></p>
+Hace que p1 apunto al duodécimo elemento del tipo p1 que esta mas allá del
+elemento al que apunta actualmente. </p>
+    <h3 id="tema8" style="color:darkred">Arrays de punteros</h3>
+    <p><i> Los punteros pueden estructurarse en arrays como a cualquier otro tipo de datos.
+La declaración para un array de punteros a enteros (int) de tamaño 10 es </i></p>
+    <p><mark> Int *x [10]; </mark></p>
+    <p><em> Para asignar la dirección de una variable llamada var al tercer elemento del array
+de punteros se escribe </em></p>
+    <p><mark> X [2] = &var; </mark></p>
+    <p><i> Para encontrar el valor de var se escribe </i></p>
+    <p><mark> *x [2] </mark></p>
+    <h3 id="tema9" style="color:darkred">Inicialización de punteros</h3>
+    <p><em> Después de declarar un puntero local no estático, pero antes de asignarle un valor
+contiene un valor desconocido. (Los punteros locales estáticos y globales se
+inicializan automáticamente a nulo). Si se intenta utilizar el puntero antes de darle
+valor, probablemente se estallara el programa. Un puntero que no apunte a
+ninguna posición valida de la memoria ha de tener asignado el valor nulo (que es
+un cero). Se usa el nulo porque C garantiza que no existe ningún objeto en la
+dirección nula. Así, cualquier puntero que sea nulo indica que no apunta a nada y
+no debe ser usado. </em></p>
+    <p><i> Una forma de dar a un puntero el valor nulo es asignándole cero. Por ejemplo, lo
+siguiente inicializa p a nulo: </i></p>
+    <p><mark> Char *p = 0; </mark></p>
+    <p><em> Adicionalmente, muchos de los archivos de cabecera de C, como <stdio.h>,
+definen la macro NULL, una constante de puntero nulo. Por eso, a menudo se
+verá la inicialización de un puntero a nulo con una instrucción como esta: </em></p>
+    <p><mark> p = NULL; </mark></p>
+    <p><i> Sin embargo, el hecho de que un puntero contenga un valor nulo no significa
+necesariamente que sea <q>seguro</q>. El uso del valor nulo es simplemente no
+convenio que siguen los programadores. No es una regla impuesta por el lenguaje
+C. por ejemplo, la secuencia que sigue, aunque incorrecta, no provocara ningún
+error de compilación; </i></p>
+    <p><mark> int *p = 0; </mark></p>
+    <p><mark> *p = 10; // ¡incorrecto! </mark></p>
+    <p><em> En este caso, la asignación a través de p provoca una asignación con 0, lo que
+normalmente hará que se estrelle el programa. </em></p>
+    <h3 id="tema10" style="color:darkred">Ejemplos</h3>
+    <code><pre> Ej.1
+      //puntero 1
+      #include stdio.h
+      #include stdlib.h
+       main()
+       {
+         int x,z,w;
+         int *p,*c;
+
+         do{
+           printf("ingresa valor de x: ");
+           scanf("%d",&x);
+         }while(x<=0);
+
+         do{
+           printf("ingresa valor de z: ");
+           scanf("%d",&z);
+         }while(z<=0);
+
+         do{
+           printf("ingresa valor de w: ");
+           scanf("%d",&w);
+         }while(w<=0);
+
+         p=&w;
+         c=&x;
+         p=c;
+
+         printf("\t\nx tiene el valor %d y está almacenado en %p\n", x,&x);
+         printf("\t\nz tiene el valor %d y está almacenado en %p\n", z,&z);
+         printf("\t\nw tiene el valor %d y está almacenado en %p\n", w,&w);
+         printf("\t\np tiene el valor %p y está almacenado en %p\n", p,&p);
+         printf("\t\nc tiene el valor %p y está almacenado en %p\n",c,&c);
+         printf("\t\nel valor al que apunta p es %d\n", *p);
+         printf("\t\nel valor al que apunta c es %d\n", *c);
+
+         system("pause");
+
+         return(0);
+       }
+       </pre></code>
+       <code><pre> Ej. 2
+         //puntero 2
+         #include stdio.h
+         #include stdlib.h
+           main()
+           {
+             int calif[]={10,9,7,8,10,7,9};
+             int *p;
+             int i;
+             int suma=0,prom;
+
+             for(i=0;i<7;i++)
+             {
+               suma+=calif[i];
+             }
+
+             prom=suma/7;
+             p=&prom;
+
+             for(i=0;i<7;i++)
+             {
+               printf("\ncalif[%d] = %d\n ", i, calif[i]);
+             }
+             printf("\nel promedio de las calificaciones es %d\n",*p);
+
+             system("pause");
+
+             return(0);
+           } </pre></code>
+    <h3 id="tema11" style="color:darkred">Conclusion</h3>
+    <p><i> Los puntero o apuntadores son muy peligrosos si no se saben usar o si no se tiene
+una correcta sintaxis de estos, por lo hace difícil también el identificar el problema
+del programa y que este no funcione, y como también se menciono en la
+conversión de punteros, al convertir un puntero a otro puntero, el programa puede
+compilar pero no da el resultado deseado, los punteros se utilizan principalmente
+para la localización de direcciones donde se encuentra almacenada el valor de la
+variable. Un puntero descontrolado causa muchos problemas, a veces es muy
+común que se almacene basura y no funcione o estalle el programa, el chiste es
+usarlos con cuidado. </i></p>
+    <h3 id="tema12" style="color:darkred">Bibliografia</h3>
+    <p><cite> Libro (Schildt, 2001) </cite></p>
+  </body>
+</html>
